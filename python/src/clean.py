@@ -84,10 +84,11 @@ def _parse_date(series: pd.Series) -> pd.Series:
 
 
 def _infer_match_phase(minute: pd.Series) -> pd.Series:
+    m = minute.astype(float)  # convert nullable Int64 to float so NaN comparisons work
     conditions = [
-        minute <= 45,
-        (minute > 45) & (minute <= 90),
-        minute > 90,
+        m <= 45,
+        (m > 45) & (m <= 90),
+        m > 90,
     ]
     choices = ["first_half", "second_half", "extra_time"]
     return np.select(conditions, choices, default=None)
@@ -199,7 +200,9 @@ class DecisionCleaner:
 
         if "minute" in df.columns:
             df["minute"] = pd.to_numeric(df["minute"], errors="coerce").astype("Int64")
-            df["match_phase"] = _infer_match_phase(df["minute"].fillna(0))
+            df["match_phase"] = _infer_match_phase(df["minute"])
+            # Leave match_phase as None/NaN where minute is unknown
+            df.loc[df["minute"].isna(), "match_phase"] = None
 
         if "team" in df.columns and "opponent" in df.columns:
             is_home_col = df.get("is_home", pd.Series(False, index=df.index))

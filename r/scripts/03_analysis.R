@@ -127,8 +127,8 @@ team_re <- ranef(m2)$team |>
   rename(re_intercept = `(Intercept)`) |>
   arrange(desc(re_intercept))
 
-readr::write_csv(team_re, file.path(FIGURES_DIR, "team_random_effects.csv"))
-message("Saved: team_random_effects.csv")
+readr::write_csv(team_re, here("data", "processed", "team_random_effects.csv"))
+message("Saved: data/processed/team_random_effects.csv")
 
 # ---------------------------------------------------------------------------
 # Plot team random effects (top/bottom 20)
@@ -136,8 +136,12 @@ message("Saved: team_random_effects.csv")
 
 library(ggplot2)
 
-p_re <- team_re |>
-  slice(c(1:20, (nrow(team_re) - 19):nrow(team_re))) |>
+n_show    <- min(20L, floor(nrow(team_re) / 2L))
+top_idx   <- seq_len(n_show)
+bot_idx   <- seq(nrow(team_re) - n_show + 1L, nrow(team_re))
+plot_rows <- dplyr::distinct(team_re[c(top_idx, bot_idx), ])
+
+p_re <- plot_rows |>
   mutate(team = reorder(team, re_intercept)) |>
   ggplot(aes(x = re_intercept, y = team,
              colour = re_intercept > 0)) +

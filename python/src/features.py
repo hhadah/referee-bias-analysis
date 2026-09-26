@@ -94,7 +94,7 @@ def add_referee_experience(df: pd.DataFrame) -> pd.DataFrame:
         return df
     df = df.copy()
 
-    match_ref = df[["match_id", "referee", "match_date"]].drop_duplicates("match_id")
+    match_ref = df[["match_id", "referee", "match_date"]].drop_duplicates(["match_id", "referee"])
     match_ref = match_ref.sort_values("match_date")
     match_ref["referee_matches_before"] = (
         match_ref.groupby("referee").cumcount()
