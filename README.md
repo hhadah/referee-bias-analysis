@@ -90,18 +90,58 @@ source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Obtain and place raw data
+### 2. Obtain data
 
-Download raw data files (CSV or Parquet) for matches and decisions and place them in `data/raw/`.
+There are three ways to get data into the pipeline.
 
-### 3. Run the Python pipeline
+#### Option A – Download automatically (recommended)
+
+**football-data.co.uk + StatsBomb open events** (Premier League, La Liga, Bundesliga, Serie A, Ligue 1):
 
 ```bash
 python -m python.pipeline \
     --competition premier_league \
     --season 2023-24 \
+    --source football_data_statsbomb \
+    --sb-competition-id 2 \
+    --sb-season-id 27
+```
+
+Use `statsbombpy.sb.competitions()` to look up valid `competition_id` / `season_id` values.
+
+**FBref + understat** (includes Champions League; understat provides xG context):
+
+```bash
+python -m python.pipeline \
+    --competition champions_league \
+    --season 2023-24 \
+    --source fbref_understat
+```
+
+Downloaded files are cached in `data/raw/` automatically.
+
+#### Option B – Use a local file
+
+Place CSV or Parquet files in `data/raw/` and pass their names explicitly:
+
+```bash
+python -m python.pipeline \
+    --competition premier_league \
+    --season 2023-24 \
+    --source file \
     --match-file matches_2023-24.csv \
     --decision-file decisions_2023-24.csv
+```
+
+### 3. Run the Python pipeline
+
+After data is available (either downloaded above or placed manually), the same command runs the full clean → feature → export chain:
+
+```bash
+python -m python.pipeline \
+    --competition premier_league \
+    --season 2023-24 \
+    --source football_data_statsbomb
 ```
 
 This writes `data/processed/decisions.parquet` and `data/processed/decisions.csv`.
