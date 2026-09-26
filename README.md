@@ -76,7 +76,7 @@ The pipeline produces a **decision-level** table where every row is one referee 
 | [Transfermarkt](https://www.transfermarkt.com) | Referee profiles, match assignments | Free (scraping) |
 | Opta / StatsBomb paid | Professional decision-level event data | Commercial |
 
-> **Note:** No data is included in this repository. The Python loader classes contain placeholder methods for each source — implement the HTTP/scraping logic inside those methods.
+> **Note:** No data is included in this repository. Use `--source football_data_statsbomb` or `--source fbref_understat` in the pipeline command (see **How to run** below) to download data automatically.
 
 ---
 

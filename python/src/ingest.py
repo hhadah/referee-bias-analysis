@@ -23,7 +23,6 @@ Data sources
 
 from __future__ import annotations
 
-import asyncio
 import io
 import json
 import logging
@@ -68,6 +67,9 @@ def _get(url: str, **kwargs) -> requests.Response:
             if exc.response is not None and exc.response.status_code == 404:
                 raise
             logger.warning("HTTP error on attempt %d for %s: %s", attempt + 1, url, exc)
+            time.sleep(5 * (attempt + 1))
+        except requests.RequestException as exc:
+            logger.warning("Request error on attempt %d for %s: %s", attempt + 1, url, exc)
             time.sleep(5 * (attempt + 1))
     raise RuntimeError(f"Failed to fetch {url} after 3 attempts")
 
@@ -519,13 +521,9 @@ class DecisionDataLoader:
                 decision_events["decision_for_team"] = decision_events["type"].isin(
                     {"Foul Won", "Offside"}
                 )
-                decision_events["var_involved"] = (
-                    decision_events.get("under_pressure", pd.Series(dtype=object))
-                    .fillna(False)
-                    .astype(bool)
-                    if "under_pressure" in decision_events.columns
-                    else False
-                )
+                # StatsBomb open data does not reliably expose VAR flags;
+                # set var_involved=False and let it be enriched from match-level sources.
+                decision_events["var_involved"] = False
 
                 cols = [
                     "match_id", "competition", "season", "match_date",
