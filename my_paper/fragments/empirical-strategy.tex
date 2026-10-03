@@ -1,0 +1,61 @@
+\section{Empirical Strategy}\label{sec:strategy}
+
+\subsection{Club-specific refereeing gaps}
+
+I begin by estimating how refereeing decisions for Barcelona differ from those for the average club in the same league-season, holding fixed the circumstances of the match. Let $D_{imt}$ denote a refereeing decision (yellow cards, red cards, fouls called, penalties) against or in favor of team $i$ in match $m$ of season $t$. I estimate
+\begin{equation}\label{eq:teamfe}
+D_{imt} = \beta_1 \text{Barcelona}_i + \beta_2 \text{RealMadrid}_i + \beta_3 \text{Elite}_i + \delta\, \text{Home}_{im} + \mu_{o(im)} + \lambda_{\ell t} + \psi_{p(im)} + \varepsilon_{imt},
+\end{equation}
+where $\text{Elite}_i$ indicates the twelve other perennial Champions League clubs, $\mu_{o(im)}$ are opponent fixed effects, $\lambda_{\ell t}$ are league $\times$ season fixed effects, and $\psi_{p(im)}$ are fixed effects for ventiles of the pre-match win probability implied by bookmaker odds. The coefficient $\beta_1$ is the gap in decisions between Barcelona and an average non-elite club in the same league-season that faces the same opponent with the same pre-match chance of winning. The identifying assumption is that, conditional on these controls, Barcelona's matches generate the same rate of card-, foul-, and penalty-worthy events as the comparison clubs'. The main threat is playing style: a possession-dominant club commits fewer fouls and suffers more of them because it has the ball. I address this in three ways. First, I add fixed effects for 2.5-point possession bins and both teams' shots (Panel B of Table \ref{tab:teamfe}), recognizing that in-game variables may themselves respond to refereeing decisions. Second, I estimate the referee's severity conditional on fouls: yellow cards controlling for the number of fouls called. Third, I normalize fouls by possession and passes, the side's exposure (Table \ref{tab:exposure}).
+
+\subsection{Barcelona in the cross-club distribution}
+
+With a single club of interest, conventional cluster-robust inference is fragile. I therefore place Barcelona's estimate in the distribution of estimates for every club. For each net decision $\Delta D_{imt}$ (decisions in favor minus decisions against), I estimate
+\begin{equation}\label{eq:ranks}
+\Delta D_{imt} = \alpha_i + \mu_{o(im)} + \lambda_{\ell t} + \psi_{p(im)} + \delta\, \text{Home}_{im} + u_{imt},
+\end{equation}
+normalize the club fixed effects $\alpha_i$ to the match-weighted average club in each league, and report Barcelona's rank among all clubs with at least 150 matches. The share of clubs at least as favored as Barcelona is a permutation-style $p$-value.
+
+\subsection{Spanish versus UEFA referees}
+
+Barcelona's style, squad, and status travel with it to the Champions League, but its referees do not: UEFA never appoints a referee from a club's own federation. Among the clubs with at least 40 Champions League matches, I estimate
+\begin{equation}\label{eq:ddd}
+\begin{split}
+D_{imt} = {} & \sum_{p \in \{\text{pre},\text{post}\}} \left[\beta_p\, \text{Barcelona}_i + \rho_p\, \text{RealMadrid}_i\right] \times \text{Domestic}_m \times \mathbb{1}[t \in p] \\
+& + \theta_{i,p} + \kappa_{\ell(i), \text{Dom}, p} + \tau_{c(m) t} + \psi_{e(im)} + \delta\, \text{Home}_{im} + \varepsilon_{imt},
+\end{split}
+\end{equation}
+where $\theta_{i,p}$ are club $\times$ period fixed effects, $\kappa_{\ell(i),\text{Dom},p}$ are home-league $\times$ domestic $\times$ period fixed effects, $\tau_{c(m)t}$ are competition $\times$ season fixed effects, and $\psi_{e(im)}$ are fixed effects for ventiles of the Elo expected score. The pre period is 2001/02--2017/18, the seasons covered by the reported payments to the vice-president of the CTA; the post period is 2018/19--2025/26. $\beta_p$ measures how much more favorably Spanish referees treat Barcelona than UEFA referees do, relative to the same gap for the other Spanish Champions League regulars. $\beta_{\text{post}} - \beta_{\text{pre}}$ is a triple difference. Its identifying assumption is that, absent a change in Barcelona's relationship with Spanish refereeing, Barcelona's domestic-versus-European gap would have evolved like that of the other regulars. The end of the payments coincides with the introduction of VAR in La Liga (2018/19) and in the Champions League knockout rounds (2018/19), which the competition $\times$ season fixed effects absorb if VAR affects clubs equally.
+
+\subsection{Season-by-season gaps}
+
+To trace the timing, I estimate the La Liga analogue of equation (\ref{eq:teamfe}) with season-specific Barcelona and Real Madrid indicators:
+\begin{equation}\label{eq:eventstudy}
+\begin{split}
+\Delta D_{imt} = {} & \sum_{s} \beta_s\, \text{Barcelona}_i \mathbb{1}[t=s] + \sum_{s} \rho_s\, \text{RealMadrid}_i \mathbb{1}[t=s] \\
+& + \delta\, \text{Home}_{im} + \lambda_t + \mu_{o(im)} + \psi_{p(im)} + \pi_{b(im)} + \varepsilon_{imt},
+\end{split}
+\end{equation}
+where $\pi_{b(im)}$ are possession-bin fixed effects.
+
+\subsection{Stoppage time}
+
+Following \citet{garicano2005favoritism}, I test whether referees lengthen matches when a favored side trails and shorten them when it leads. For domestic matches whose score margin at 90 minutes is at most one goal,
+\begin{equation}\label{eq:stoppage}
+\begin{split}
+\text{Stoppage}_m = {} & \sum_{g} \left[a_g \text{Leads}_{gm} + c_g \text{Trails}_{gm} + d_g \text{Tied}_{gm}\right] \\
+& + b_L \text{HomeLeads}_m + b_T \text{HomeTrails}_m + X_m \pi + \lambda_{\ell t} + \varepsilon_m,
+\end{split}
+\end{equation}
+where $g \in \{\text{Barcelona}, \text{Real Madrid}\}$ and $X_m$ contains second-half goals and total cards and penalties. Favoritism toward club $g$ implies $c_g - a_g > 0$.
+
+\subsection{Real Madrid in the Champions League}
+
+To study Real Madrid's treatment by UEFA referees, I estimate on the Champions League team-match panel
+\begin{equation}\label{eq:rmucl}
+\begin{split}
+\Delta D_{imt} = {} & \sum_{s} \left[r_s\, \text{RealMadrid}_i + b_s\, \text{Barcelona}_i + e_s\, \text{Elite}_i\right] \mathbb{1}[t=s] \\
+& + \delta\, \text{Home}_{im} + \lambda_t + \sigma_{g(m)} + \mu_{o(im)} + \psi_{e(im)} + \pi_{b(im)} + \varepsilon_{imt},
+\end{split}
+\end{equation}
+where $\sigma_{g(m)}$ are stage fixed effects (group/league phase, knockout), $\psi_{e(im)}$ are Elo expected-score ventile fixed effects, and $\pi_{b(im)}$ are possession-bin fixed effects. Each $r_s$ is Real Madrid's gap relative to the average non-elite team in season $s$. Pooled versions replace the season interactions with indicators for all seasons, for stage, and for three eras: 2001/02--2012/13, 2013/14--2017/18 (four titles in five seasons), and 2018/19--2025/26.

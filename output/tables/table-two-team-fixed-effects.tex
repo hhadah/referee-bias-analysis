@@ -1,0 +1,63 @@
+\begin{table}[!h]
+\centering\centering
+\caption{Refereeing Decisions: Barcelona Relative to the Average Team in Its League \label{tab:teamfe}}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{threeparttable}
+\begin{tabular}[t]{lcccccccccc}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{Yellow cards} & \multicolumn{2}{c}{Red cards} & \multicolumn{2}{c}{Fouls} & \multicolumn{2}{c}{Penalties} & \multicolumn{2}{c}{Yellow cards given fouls} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7} \cmidrule(l{3pt}r{3pt}){8-9} \cmidrule(l{3pt}r{3pt}){10-11}
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{Against} & \multicolumn{1}{c}{For} & \multicolumn{1}{c}{Against} & \multicolumn{1}{c}{For} & \multicolumn{1}{c}{Against} & \multicolumn{1}{c}{For} & \multicolumn{1}{c}{Awarded} & \multicolumn{1}{c}{Conceded} & \multicolumn{1}{c}{Against} & \multicolumn{1}{c}{For} \\
+  & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10)\\
+\midrule
+\addlinespace[0.5em]
+\multicolumn{11}{l}{\textit{Panel A: Pre-match controls}}\\
+\midrule \hspace{1em}Barcelona & -0.230*** & 0.026 & -0.013 & 0.009 & -1.727*** & 0.882*** & -0.016 & -0.008 & -0.056 & -0.063\\
+\hspace{1em} & (0.059) & (0.083) & (0.009) & (0.015) & (0.210) & (0.236) & (0.019) & (0.013) & (0.054) & (0.074)\\
+\hspace{1em}Real Madrid & -0.051 & 0.050 & 0.019 & -0.018 & -0.659** & 0.747*** & 0.025 & 0.003 & 0.016 & -0.024\\
+\hspace{1em} & (0.069) & (0.058) & (0.013) & (0.016) & (0.329) & (0.188) & (0.017) & (0.010) & (0.048) & (0.057)\\
+\hspace{1em}Other elite clubs & 0.049** & -0.080*** & 0.011** & -0.012** & -0.278*** & -0.598*** & -0.004 & -0.005 & 0.075*** & -0.021\\
+\hspace{1em} & (0.024) & (0.025) & (0.005) & (0.005) & (0.098) & (0.096) & (0.005) & (0.004) & (0.020) & (0.022)\\
+\hspace{1em}Home & -0.161*** & 0.107*** & -0.015*** & 0.011*** & -0.017 & 0.103** & 0.025*** & -0.028*** & -0.157*** & 0.094***\\
+\hspace{1em} & (0.013) & (0.013) & (0.003) & (0.003) & (0.043) & (0.046) & (0.003) & (0.003) & (0.012) & (0.012)\\
+\hspace{1em}Fouls committed &  &  &  &  &  &  &  &  & 0.101*** & \\
+\hspace{1em} &  &  &  &  &  &  &  &  & (0.001) \vphantom{1} & \\
+\hspace{1em}Fouls suffered &  &  &  &  &  &  &  &  &  & 0.100***\\
+\hspace{1em} &  &  &  &  &  &  &  &  &  & \vphantom{1} (0.001)\\
+\hspace{1em}Observations & 76,022 & 76,022 & 76,022 & 76,022 & 75,218 & 75,218 & 84,902 & 84,902 & 75,218 & 75,218\\
+\addlinespace[0.5em]
+\multicolumn{11}{l}{\textit{Panel B: Adding in-game style controls (possession bins, shots)}}\\
+\midrule \hspace{1em}Barcelona & -0.174*** & 0.088 & -0.008 & -0.030* & -1.280*** & 0.938*** & -0.001 & -0.021 & -0.039 & -0.011\\
+\hspace{1em} & (0.058) & (0.064) & (0.011) & (0.017) & (0.213) & (0.246) & (0.021) & (0.016) & (0.049) & (0.056)\\
+\hspace{1em}Real Madrid & -0.021 & 0.078 & 0.016 & -0.014 & -0.443 & 0.934*** & 0.018 & -0.010 & 0.026 & -0.020\\
+\hspace{1em} & (0.068) & (0.060) & (0.012) & (0.016) & (0.320) & (0.193) & (0.019) & (0.011) & (0.046) & (0.057)\\
+\hspace{1em}Other elite clubs & 0.068*** & -0.066*** & 0.014*** & -0.016*** & -0.236** & -0.583*** & -0.006 & -0.007 & 0.093*** & -0.005\\
+\hspace{1em} & (0.023) & (0.025) & (0.005) & (0.005) & (0.098) & (0.097) & (0.006) & (0.005) & (0.020) & (0.022)\\
+\hspace{1em}Home & -0.148*** & 0.096*** & -0.011*** & 0.007** & -0.124*** & 0.209*** & 0.014*** & -0.018*** & -0.135*** & 0.074***\\
+\hspace{1em} & (0.013) & (0.013) & (0.003) & (0.003) & (0.045) & (0.048) & (0.004) & (0.004) & (0.012) & (0.012)\\
+\hspace{1em}Fouls committed &  &  &  &  &  &  &  &  & 0.106*** & \\
+\hspace{1em} &  &  &  &  &  &  &  &  & (0.001) & \\
+\hspace{1em}Fouls suffered &  &  &  &  &  &  &  &  &  & 0.105***\\
+\hspace{1em} &  &  &  &  &  &  &  &  &  & (0.001)\\
+\hspace{1em}Own shots & -0.012*** & 0.001 & -0.005*** & 0.006*** & -0.075*** & -0.062*** & 0.006*** & -0.000 & -0.004*** & 0.008***\\
+\hspace{1em} & (0.001) & (0.001) & (0.000) & (0.000) & (0.004) & (0.004) & (0.000) & (0.000) & (0.001) & \vphantom{1} (0.001)\\
+\hspace{1em}Opponent shots & -0.000 & -0.012*** & 0.006*** & -0.005*** & -0.069*** & -0.071*** & -0.000 & 0.005*** & 0.007*** & -0.005***\\
+\hspace{1em} & (0.001) & (0.001) & (0.000) & (0.000) & (0.004) & (0.004) & (0.000) & (0.000) & (0.001) & (0.001)\\
+\hspace{1em}Observations & 69,966 & 69,966 & 69,966 & 69,966 & 69,966 & 69,966 & 70,737 & 70,737 & 69,966 & 69,966\\
+Mean of dependent variable & 1.955 & 1.955 & 0.110 & 0.110 & 13.874 & 13.874 & 0.141 & 0.141 & 1.957 & 1.957\\
+p-value: Barcelona = Real Madrid (A) & 0.031 & 0.793 & 0.026 & 0.185 & 0.003 & 0.613 & 0.092 & 0.467 & 0.272 & 0.660\\
+p-value: Barcelona = Real Madrid (B) & 0.060 & 0.903 & 0.087 & 0.475 & 0.016 & 0.988 & 0.489 & 0.533 & 0.287 & 0.900\\
+League $\times$ season FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes\\
+Opponent FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes\\
+Win-probability ventile FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes\\
+Possession-bin FE (Panel B) & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes\\
+\bottomrule
+\multicolumn{11}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\end{tabular}
+\begin{tablenotes}[para]
+\item \textit{Note: } 
+\item This table includes the estimation results of equation (\ref{eq:teamfe}) on the team-match panel of the top-5 domestic leagues. Each column is a separate regression; the dependent variable is the per-match count named in the column header from the team's perspective (``against'' = decisions against the team; ``for'' = decisions against its opponent). Barcelona, Real Madrid and Other elite clubs are team indicators, so each coefficient is the difference relative to the average non-elite team in the same league-season facing the same opponent at the same pre-match win probability. Cards and fouls cover 2005/06--2025/26; penalties cover 2001/02--2025/26 league-seasons with complete penalty records. Columns (9) and (10) condition on the number of fouls called against the carded side, so they measure the referee's severity per foul. Panel B adds fixed effects for 2.5-point possession bins and both teams' shots, which may themselves respond to refereeing decisions. Standard errors clustered at the team-season level in parentheses.
+\end{tablenotes}
+\end{threeparttable}}
+\end{table}

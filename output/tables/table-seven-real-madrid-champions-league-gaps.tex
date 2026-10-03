@@ -1,0 +1,61 @@
+\begin{table}[!h]
+\centering\centering
+\caption{Real Madrid's Refereeing Gaps in the Champions League \label{tab:rmuclreg}}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{threeparttable}
+\begin{tabular}[t]{lcccccc}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{Yellow cards} & \multicolumn{2}{c}{Fouls} & \multicolumn{2}{c}{Penalties} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{Against} & \multicolumn{1}{c}{For} & \multicolumn{1}{c}{Against} & \multicolumn{1}{c}{For} & \multicolumn{1}{c}{Awarded} & \multicolumn{1}{c}{Conceded} \\
+  & (1) & (2) & (3) & (4) & (5) & (6)\\
+\midrule
+\addlinespace[0.5em]
+\multicolumn{7}{l}{\textit{Panel A: All matches}}\\
+\midrule \hspace{1em}Real Madrid & 0.143 & -0.097 & -0.881** & -0.284 & -0.020 & -0.018\\
+\hspace{1em} & (0.096) & (0.097) & (0.440) & (0.399) & (0.031) & (0.031)\\
+\hspace{1em}Barcelona & 0.081 & 0.408*** & -1.188*** & 1.497*** & -0.023 & -0.028\\
+\hspace{1em} & (0.110) & (0.132) & (0.382) & (0.344) & (0.039) & (0.029)\\
+\hspace{1em}Other elite clubs & -0.099* & -0.168*** & -0.295 & -0.846*** & 0.008 & -0.036**\\
+\hspace{1em} & (0.054) & (0.061) & (0.200) & (0.228) & (0.018) & \vphantom{1} (0.018)\\
+\hspace{1em}Observations & 5,490 & 5,490 & 5,470 & 5,470 & 5,058 & \vphantom{2} 5,058\\
+\addlinespace[0.5em]
+\multicolumn{7}{l}{\textit{Panel B: By stage}}\\
+\midrule \hspace{1em}Real Madrid $\times$ group/league phase & 0.087 & -0.210* & -0.869* & -0.636 & 0.002 & -0.001\\
+\hspace{1em} & (0.145) & (0.115) & (0.487) & (0.455) & (0.035) & (0.034)\\
+\hspace{1em}Real Madrid $\times$ knockout & 0.214* & 0.048 & -0.897* & 0.167 & -0.046 & -0.039\\
+\hspace{1em} & (0.122) & (0.127) & (0.533) & (0.583) & (0.038) & (0.041)\\
+\hspace{1em}Barcelona & 0.082 & 0.410*** & -1.188*** & 1.504*** & -0.023 & -0.028\\
+\hspace{1em} & (0.110) & (0.132) & (0.382) & (0.345) & (0.039) & (0.029)\\
+\hspace{1em}Other elite clubs & -0.098* & -0.166*** & -0.296 & -0.839*** & 0.008 & -0.036**\\
+\hspace{1em} & (0.054) & (0.061) & (0.201) & (0.228) & (0.018) & (0.018)\\
+\hspace{1em}Observations & 5,490 & 5,490 & 5,470 & 5,470 & 5,058 & \vphantom{1} 5,058\\
+\addlinespace[0.5em]
+\multicolumn{7}{l}{\textit{Panel C: By era}}\\
+\midrule \hspace{1em}Real Madrid $\times$ 2001/02--2012/13 & 0.284* & 0.096 & 0.571 & 0.619 & -0.057* & 0.033\\
+\hspace{1em} & (0.151) & (0.111) & (0.482) & (0.631) & (0.034) & (0.027)\\
+\hspace{1em}Real Madrid $\times$ 2013/14--2017/18 & 0.020 & 0.084 & -2.522*** & -0.589 & 0.019 & -0.021\\
+\hspace{1em} & (0.095) & (0.160) & (0.539) & (0.799) & (0.066) & (0.053)\\
+\hspace{1em}Real Madrid $\times$ 2018/19--2025/26 & 0.105 & -0.361*** & -1.034* & -0.815** & -0.015 & -0.053\\
+\hspace{1em} & (0.158) & (0.112) & (0.617) & (0.370) & (0.038) & (0.047)\\
+\hspace{1em}Barcelona & 0.079 & 0.413*** & -1.219*** & 1.494*** & -0.022 & -0.028\\
+\hspace{1em} & (0.110) & (0.133) & (0.377) & (0.346) & (0.039) & (0.029)\\
+\hspace{1em}Other elite clubs & -0.101* & -0.166*** & -0.326 & -0.853*** & 0.009 & -0.036**\\
+\hspace{1em} & (0.054) & (0.061) & (0.200) & (0.228) & (0.018) & (0.018)\\
+\hspace{1em}Observations & 5,490 & 5,490 & 5,470 & 5,470 & 5,058 & 5,058\\
+Mean of dependent variable & 1.879 & 1.879 & 13.093 & 13.093 & 0.159 & 0.159\\
+p-value: Real Madrid = other elite clubs (A) & 0.005 & 0.397 & 0.140 & 0.119 & 0.315 & 0.502\\
+p-value: knockout = group (B) & 0.509 & 0.072 & 0.956 & 0.217 & 0.225 & 0.388\\
+p-value: 2013/14--2017/18 = 2018/19--2025/26 (C) & 0.626 & 0.010 & 0.049 & 0.782 & 0.632 & 0.620\\
+Season, stage, opponent FE & Yes & Yes & Yes & Yes & Yes & Yes\\
+Elo-ventile and possession-bin FE & Yes & Yes & Yes & Yes & Yes & Yes\\
+\bottomrule
+\multicolumn{7}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\end{tabular}
+\begin{tablenotes}[para]
+\item \textit{Note: } 
+\item This table includes the estimation results of equation (\ref{eq:rmucl}), pooled across seasons, on the Champions League team-match panel (group/league phase and knockouts). Coefficients are per-match differences relative to the average non-elite team in the same season, stage, and Elo-ventile, facing the same opponent. 2013/14--2017/18 covers Real Madrid's four titles in five seasons. Cards and fouls cover 2005/06--2025/26; penalties cover seasons with complete event logs. Standard errors clustered at the team-season level in parentheses.
+\end{tablenotes}
+\end{threeparttable}}
+\end{table}

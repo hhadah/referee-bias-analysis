@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,threeparttable,multirow,makecell,float,graphicx,caption}
+\usepackage[normalem]{ulem}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{aer}
+\onehalfspacing
+
+\title{Who Gets the Whistle? Refereeing Decisions and FC Barcelona in European Football, 2001--2026}
+\author{Hussain Hadah}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent \input{fragments/abstract}
+
+\medskip
+\noindent \textbf{JEL Codes:} D73, L83, Z20, Z28. \quad
+\textbf{Keywords:} referee bias, favoritism, corruption, social pressure, football.
+\end{abstract}
+
+\newpage
+\input{fragments/introduction}
+\input{fragments/data}
+\input{fragments/empirical-strategy}
+\input{fragments/results}
+\input{fragments/conclusion}
+
+\newpage
+\bibliography{references}
+
+\newpage
+\section*{Tables and Figures}
+
+\input{tables/table-one-summary-statistics}
+\clearpage
+\input{tables/table-two-team-fixed-effects}
+\clearpage
+\input{tables/table-three-domestic-vs-champions-league}
+\clearpage
+\input{tables/table-four-stoppage-time}
+\clearpage
+\input{tables/table-five-exposure-adjusted-fouls}
+\clearpage
+\input{tables/table-six-real-madrid-champions-league-by-season}
+\clearpage
+\input{tables/table-seven-real-madrid-champions-league-gaps}
+\clearpage
+\input{tables/table-eight-real-madrid-champions-league-stoppage}
+\clearpage
+
+\begin{figure}[H]
+  \centering
+  \caption{Net Refereeing Decisions per Match by Season \label{fig:raw}}
+  \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{figure/figure-one-barcelona-raw-differentials.pdf}
+\end{figure}
+\clearpage
+
+\begin{figure}[H]
+  \centering
+  \caption{Club Favorability Fixed Effects, Domestic Leagues \label{fig:ranks}}
+  \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{figure/figure-two-team-favorability-ranking.pdf}
+\end{figure}
+\clearpage
+
+\begin{figure}[H]
+  \centering
+  \caption{Barcelona and Real Madrid Relative to the Average La Liga Club, by Season \label{fig:es}}
+  \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{figure/figure-three-negreira-event-study.pdf}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Net Yellow Cards by Season: Barcelona and Real Madrid versus Europe's Elite Clubs \label{fig:elite-yellow}}
+  \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{figure/figure-four-elite-net-yellow-by-season.pdf}
+\end{figure}
+\clearpage
+
+\begin{figure}[H]
+  \centering
+  \caption{Net Fouls by Season: Barcelona and Real Madrid versus Europe's Elite Clubs \label{fig:elite-fouls}}
+  \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{figure/figure-five-elite-net-fouls-by-season.pdf}
+\end{figure}
+\clearpage
+
+\begin{figure}[H]
+  \centering
+  \caption{Net Penalties by Season: Barcelona and Real Madrid versus Europe's Elite Clubs \label{fig:elite-pens}}
+  \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{figure/figure-six-elite-net-penalties-by-season.pdf}
+\end{figure}
+\clearpage
+
+\begin{figure}[H]
+  \centering
+  \caption{Refereeing Gaps by Club and Season \label{fig:elite-heatmap}}
+  \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/figure-seven-elite-heatmap.pdf}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+  \centering
+  \caption{Real Madrid in the Champions League: Refereeing Gaps by Season \label{fig:rmucl}}
+  \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{figure/figure-eight-real-madrid-champions-league-by-season.pdf}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,39 @@
+\begin{table}[!h]
+\centering\centering
+\caption{Fouls Normalized by Possession and Passes: Domestic Leagues \label{tab:exposure}}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{threeparttable}
+\begin{tabular}[t]{lcccccccc}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{Per 10 min. of possession} & \multicolumn{2}{c}{Possession as exposure} & \multicolumn{2}{c}{log possession as regressor} & \multicolumn{2}{c}{Per 100 passes} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7} \cmidrule(l{3pt}r{3pt}){8-9}
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{Suffered} & \multicolumn{1}{c}{Committed} & \multicolumn{1}{c}{Suffered} & \multicolumn{1}{c}{Committed} & \multicolumn{1}{c}{Suffered} & \multicolumn{1}{c}{Committed} & \multicolumn{1}{c}{Suffered} & \multicolumn{1}{c}{Committed} \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4} \cmidrule(l{3pt}r{3pt}){5-5} \cmidrule(l{3pt}r{3pt}){6-6} \cmidrule(l{3pt}r{3pt}){7-7} \cmidrule(l{3pt}r{3pt}){8-8} \cmidrule(l{3pt}r{3pt}){9-9}
+  & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)\\
+\midrule
+Barcelona & -0.166*** & 0.246*** & -0.039** & 0.053*** & 0.045*** & -0.099*** & -0.452 & -0.072\\
+ & (0.055) & (0.075) & (0.019) & (0.020) & (0.016) & (0.018) & (0.414) & (0.343)\\
+Real Madrid & 0.128** & -0.183* & 0.063*** & -0.051* & 0.055*** & -0.042 & -0.084 & -0.417\\
+ & (0.050) & (0.094) & (0.016) & (0.027) & (0.013) & (0.027) & (0.389) & (0.308)\\
+Other elite clubs & -0.111*** & -0.039 & -0.050*** & -0.013 & -0.045*** & -0.022*** & -1.085** & -0.079\\
+ & (0.026) & (0.030) & (0.009) & (0.009) & (0.007) & (0.008) & (0.521) & (0.371)\\
+Home & 0.203*** & -0.176*** & 0.065*** & -0.057*** & 0.017*** & -0.010*** & 0.164 & 0.083\\
+ & (0.012) & (0.012) & (0.004) & (0.004) & (0.003) & (0.003) & (0.187) & (0.176)\\
+log(possession share) &  &  &  &  & 0.168*** & 0.173*** &  & \\
+ &  &  &  &  & (0.008) & (0.008) &  & \\
+\midrule
+Observations & 69,926 & 69,926 & 69,926 & 69,926 & 69,926 & 69,926 & 67,848 & 67,848\\
+Barcelona rate ratio, exp($\hat\beta$) &  &  & 0.962 & 1.054 & 1.046 & 0.906 &  & \\
+Mean of dependent variable & 3.171 & 3.171 & 13.744 & 13.744 & 13.744 & 13.744 & 5.020 & 5.020\\
+Estimator & OLS & OLS & Poisson & Poisson & Poisson & Poisson & OLS & OLS\\
+League $\times$ season, opponent, win-prob. FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes\\
+\bottomrule
+\multicolumn{9}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\end{tabular}
+\begin{tablenotes}[para]
+\item \textit{Note: } 
+\item The sample is the domestic-league team-match panel, 2005/06--2025/26, restricted to matches with possession data. Fouls suffered are fouls called on the opponent; their exposure is the team's own possession. Fouls committed are fouls called on the team; their exposure is the opponent's possession. Columns (1)--(2) divide fouls by nominal possession minutes (possession share $\times$ 90). Columns (3)--(4) are Poisson regressions with log possession share as an offset, i.e., fouls are assumed proportional to possession; coefficients are log rate ratios. Columns (5)--(6) estimate the elasticity of fouls with respect to possession instead of imposing it. Columns (7)--(8) divide fouls by the passes of the team in possession. All columns include league $\times$ season, opponent, and pre-match win-probability ventile fixed effects. Standard errors clustered at the team-season level in parentheses.
+\end{tablenotes}
+\end{threeparttable}}
+\end{table}

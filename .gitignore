@@ -216,3 +216,23 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---- Project data (re-created by programs/01-02 download scripts) ----
+data/raw/**
+!data/raw/**/
+!data/raw/**/.gitkeep
+data/datasets/**
+!data/datasets/.gitkeep
+output/logs/*.log
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+my_paper/*.aux
+my_paper/*.log
+my_paper/*.out
+my_paper/*.bbl
+my_paper/*.blg
+my_paper/*.synctex.gz
+my_paper/*.fdb_latexmk
+my_paper/*.fls
