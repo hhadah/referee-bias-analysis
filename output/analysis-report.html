@@ -1,0 +1,71 @@
+<!doctype html><html lang='en'><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Refereeing gaps: Barcelona and Real Madrid</title>
+<style>body{max-width:1180px;margin:40px auto;padding:0 24px;color:#20252b;font:17px/1.55 system-ui,sans-serif}h1{line-height:1.15}h2{margin-top:2.5em}p{max-width:95ch}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid #dbe0e5;white-space:nowrap}thead{background:#f3f5f7}.table-scroll{overflow:auto}figure{margin:28px 0}img{width:100%;height:auto;border:1px solid #e0e3e7}figcaption,small{color:#535e68}.warning{border-left:4px solid #a50044;padding:12px 20px;background:#faf2f5}a{color:#175b90}</style>
+<h1>Refereeing gaps after accounting for playing style</h1>
+<small>Generated run 20261003-175015. Sources: ESPN and football-data.co.uk.</small>
+<p class='warning'>Possession is a proxy for opportunities, not a count of comparable tackles or penalty-area incidents. Fouls can occur off the ball. Yellow cards include dissent and time-wasting, so cards divided by fouls are not a binomial probability. Called fouls, final possession and shots can themselves respond to earlier decisions. The cached data lack foul severity, uncalled incidents, complete box touches and independently judged decision correctness. They also lack sufficiently complete referee identities for a modern referee-fixed-effect design. A residual gap cannot establish favoritism or rule out bias in a small number of decisive incidents.</p>
+<p>Tables use effects per 10 matches; figures label their own units. Positive means more favorable to the target club. Main comparison intervals are pointwise 95% season-block clustered intervals with small-sample t critical values. The two team rows from a match are not treated as independent games. Season blocks allow arbitrary dependence within a season but assume independence across seasons. Models compare recorded decisions, not correct and incorrect calls.</p>
+<h2>Barcelona versus Real Madrid in La Liga</h2>
+<p>Each cell is a gap per 10 matches followed by its 95% interval. The ladder holds the sample fixed within each outcome; penalties have their own event-log sample.</p>
+<div class='table-scroll'><table><thead><tr><th>Outcome</th><th>Raw</th><th>Prior style</th><th>Same match style</th><th>Given called fouls</th></tr></thead><tbody><tr><td>Fewer yellow cards received</td><td>2.06 [-0.15, 4.26]</td><td>-0.44 [-3.36, 2.47]</td><td>1.29 [-0.96, 3.55]</td><td>0.49 [-1.29, 2.27]</td></tr>
+<tr><td>More opponent yellow cards</td><td>-0.18 [-1.75, 1.39]</td><td>-0.51 [-3.21, 2.19]</td><td>-0.75 [-2.37, 0.88]</td><td>-0.25 [-1.67, 1.17]</td></tr>
+<tr><td>Net yellow cards</td><td>1.88 [-0.74, 4.50]</td><td>-0.96 [-5.44, 3.53]</td><td>0.55 [-1.85, 2.94]</td><td>0.24 [-1.80, 2.28]</td></tr>
+<tr><td>Net fouls</td><td>14.19 [1.60, 26.79]</td><td>1.46 [-18.74, 21.66]</td><td>3.26 [-7.98, 14.50]</td><td>Not applicable</td></tr>
+<tr><td>Net red cards</td><td>0.62 [0.00, 1.23]</td><td>0.38 [-0.63, 1.38]</td><td>-0.36 [-1.12, 0.41]</td><td>-0.34 [-1.11, 0.43]</td></tr>
+<tr><td>Net penalties</td><td>-0.15 [-0.98, 0.68]</td><td>-0.32 [-1.36, 0.71]</td><td>-0.10 [-0.95, 0.75]</td><td>Not applicable</td></tr></tbody></table></div>
+<p class='warning'>Barcelona's prior-match possession lies above the non-elite 95th percentile in 99.9% of its eligible matches. Only 1.3% lies inside Real Madrid's central 90% range. The lagged-style models therefore depend on extrapolation, especially against non-elite clubs. L3 therefore uses same-match style instead of lagged style. It has more support but conditions on variables refereeing can change.</p>
+<h3>Barcelona versus non-elite La Liga clubs</h3>
+<div class='table-scroll'><table><thead><tr><th>Outcome</th><th>Raw</th><th>Prior style</th><th>Same match style</th><th>Given called fouls</th></tr></thead><tbody><tr><td>Fewer yellow cards received</td><td>6.35 [4.92, 7.79]</td><td>-0.73 [-2.72, 1.27]</td><td>-0.44 [-1.73, 0.84]</td><td>-1.15 [-2.45, 0.16]</td></tr>
+<tr><td>More opponent yellow cards</td><td>1.48 [-0.03, 2.98]</td><td>-3.19 [-6.68, 0.30]</td><td>-0.68 [-2.57, 1.21]</td><td>-0.76 [-2.36, 0.84]</td></tr>
+<tr><td>Net yellow cards</td><td>7.83 [5.52, 10.15]</td><td>-3.92 [-8.27, 0.44]</td><td>-1.12 [-3.43, 1.19]</td><td>-1.91 [-4.25, 0.43]</td></tr>
+<tr><td>Net fouls</td><td>40.83 [33.66, 47.99]</td><td>5.46 [-12.22, 23.14]</td><td>7.68 [-1.84, 17.20]</td><td>Not applicable</td></tr>
+<tr><td>Net red cards</td><td>0.73 [0.28, 1.18]</td><td>-0.84 [-1.91, 0.24]</td><td>-1.49 [-2.22, -0.75]</td><td>-1.46 [-2.19, -0.72]</td></tr>
+<tr><td>Net penalties</td><td>1.20 [0.56, 1.84]</td><td>-0.64 [-1.58, 0.29]</td><td>0.01 [-0.76, 0.78]</td><td>Not applicable</td></tr></tbody></table></div>
+<p>Fouls committed have estimated possession elasticity 0.25, 95% CI [0.21, 0.28], with p < 0.001 against proportionality of one. Fouls suffered have estimated possession elasticity 0.24, 95% CI [0.21, 0.27], with p < 0.001 against proportionality of one. Do not assume fouls are proportional to possession.</p>
+<figure><a href='figures/figure-barcelona-style-ladder.pdf'><img src='figures/figure-barcelona-style-ladder.png' alt='Barcelona: raw and adjusted differences'></a><figcaption>Barcelona: raw and adjusted differences. Click for PDF.</figcaption></figure>
+<figure><a href='figures/figure-barcelona-style-possession-diagnostic.pdf'><img src='figures/figure-barcelona-style-possession-diagnostic.png' alt='Possession and the observed decision rates'></a><figcaption>Possession and the observed decision rates. Click for PDF.</figcaption></figure>
+<figure><a href='figures/figure-barcelona-style-robustness.pdf'><img src='figures/figure-barcelona-style-robustness.png' alt='Barcelona: eras and overlap'></a><figcaption>Barcelona: eras and overlap. Click for PDF.</figcaption></figure>
+<h3>Before and after 2018</h3>
+<p>Prior-style-adjusted net yellows. This is a descriptive era split, not a treatment-effect design.</p>
+<div class='table-scroll'><table><thead><tr><th>Comparison</th><th>Gap and 95CI</th><th>p value</th></tr></thead><tbody><tr><td>Barcelona minus Real Madrid, 2005/06-2017/18</td><td>2.46 [-1.19, 6.10]</td><td>0.176</td></tr>
+<tr><td>Barcelona minus Real Madrid, 2018/19-2025/26</td><td>-4.33 [-8.22, -0.44]</td><td>0.031</td></tr>
+<tr><td>Change in (Barcelona minus Real Madrid) after 2018</td><td>-6.79 [-10.45, -3.13]</td><td>0.001</td></tr></tbody></table></div>
+<h2>Real Madrid in the Champions League</h2>
+<p>Style-adjusted comparisons against the other elite clubs, excluding Barcelona. Baseline_per10 is the non-elite own-side count, provided as a scale benchmark, not the comparator mean.</p>
+<div class='table-scroll'><table><thead><tr><th>Outcome</th><th>Gap and 95CI</th><th>MDE 80pct</th><th>Madrid matches</th><th>Seasons</th><th>Baseline per10</th></tr></thead><tbody><tr><td>Net yellow cards</td><td>-1.95 [-4.35, 0.45]</td><td>3.38</td><td>218</td><td>19</td><td>19.77</td></tr>
+<tr><td>Net fouls</td><td>12.89 [2.25, 23.54]</td><td>15.01</td><td>218</td><td>19</td><td>132.19</td></tr>
+<tr><td>Net penalties</td><td>-0.64 [-1.61, 0.33]</td><td>1.37</td><td>218</td><td>19</td><td>1.37</td></tr>
+<tr><td>Net red cards</td><td>0.40 [-0.42, 1.21]</td><td>1.15</td><td>218</td><td>19</td><td>0.97</td></tr>
+<tr><td>Net yellow cards, given called fouls</td><td>-3.07 [-4.82, -1.33]</td><td>2.46</td><td>218</td><td>19</td><td>19.77</td></tr></tbody></table></div>
+<p>Pooling all eligible seasons estimates a persistent average gap rather than a different effect in every small season. It adds information without inventing matches or treating domestic and UEFA officials as interchangeable. The MDE is calibrated under a noncentral-t approximation at 80% power and 5% two-sided size, using the estimated clustered SE. Equivalence results use explicit illustrative bounds and 90% intervals; failure to reject zero is not equivalence. Seasonal empirical-Bayes estimates retain the full covariance of jointly estimated season coefficients. Their intervals condition on estimated between-season heterogeneity and can understate uncertainty. Unpooled estimates, heterogeneity sensitivity, and leave-one-season-out fits remain available. Shrinkage intervals are not the headline evidence.</p>
+<figure><a href='figures/figure-rm-ucl-pooled-comparisons.pdf'><img src='figures/figure-rm-ucl-pooled-comparisons.png' alt='Madrid: pooled Champions League comparisons'></a><figcaption>Madrid: pooled Champions League comparisons. Click for PDF.</figcaption></figure>
+<figure><a href='figures/figure-rm-ucl-precision-limits.pdf'><img src='figures/figure-rm-ucl-precision-limits.png' alt='Madrid: what the sample can detect'></a><figcaption>Madrid: what the sample can detect. Click for PDF.</figcaption></figure>
+<figure><a href='figures/figure-rm-ucl-season-stability.pdf'><img src='figures/figure-rm-ucl-season-stability.png' alt='Madrid: seasonal uncertainty and stability'></a><figcaption>Madrid: seasonal uncertainty and stability. Click for PDF.</figcaption></figure>
+<h2>Do differences appear early?</h2>
+<p>These first-30-minute and whole-match estimates use the same matches within each comparison. Both teams' card totals must reconcile to the box score. Exposure differs between the two windows, so this is a timing diagnostic, not a rate comparison.</p>
+<div class='table-scroll'><table><thead><tr><th>Comparison</th><th>Period</th><th>Gap and 95CI</th><th>Target matches</th><th>Seasons</th></tr></thead><tbody><tr><td>Barcelona vs Real Madrid</td><td>First 30 minutes</td><td>-0.05 [-1.11, 1.00]</td><td>375</td><td>15</td></tr>
+<tr><td>Barcelona vs Real Madrid</td><td>Full match</td><td>-1.00 [-3.62, 1.63]</td><td>375</td><td>15</td></tr>
+<tr><td>Real Madrid vs Other elite clubs</td><td>First 30 minutes</td><td>1.05 [-0.87, 2.97]</td><td>80</td><td>15</td></tr>
+<tr><td>Real Madrid vs Other elite clubs</td><td>Full match</td><td>0.10 [-4.82, 5.02]</td><td>80</td><td>15</td></tr></tbody></table></div>
+<figure><a href='figures/card-timing-diagnostic.pdf'><img src='figures/card-timing-diagnostic.png' alt='Early-card diagnostic'></a><figcaption>Early-card diagnostic. Click for PDF.</figcaption></figure>
+<h2>Multiplicity</h2>
+<p>The CSV below reports Holm-adjusted p-values across the 11 headline endpoints. Other specifications, eras and seasons are sensitivity analyses, not separate discoveries.</p>
+<div class='table-scroll'><table><thead><tr><th>target</th><th>outcome</th><th>p value</th><th>Holm p</th></tr></thead><tbody><tr><td>Barcelona</td><td>own_yellow</td><td>0.246</td><td>1.000</td></tr>
+<tr><td>Barcelona</td><td>opp_yellow</td><td>0.352</td><td>1.000</td></tr>
+<tr><td>Barcelona</td><td>net_yellow</td><td>0.638</td><td>1.000</td></tr>
+<tr><td>Barcelona</td><td>net_fouls</td><td>0.552</td><td>1.000</td></tr>
+<tr><td>Barcelona</td><td>net_red</td><td>0.344</td><td>1.000</td></tr>
+<tr><td>Barcelona</td><td>net_pens</td><td>0.813</td><td>1.000</td></tr>
+<tr><td>Real Madrid</td><td>net_yellow</td><td>0.105</td><td>0.941</td></tr>
+<tr><td>Real Madrid</td><td>net_fouls</td><td>0.020</td><td>0.203</td></tr>
+<tr><td>Real Madrid</td><td>net_pens</td><td>0.180</td><td>1.000</td></tr>
+<tr><td>Real Madrid</td><td>net_red</td><td>0.322</td><td>1.000</td></tr>
+<tr><td>Real Madrid</td><td>net_yellow_fouls</td><td>0.002</td><td>0.018</td></tr></tbody></table></div>
+<h2>Data and audit corrections</h2>
+<p>The rebuilt sample contains 48,346 completed matches across the six competitions through 2025/26. 43 recorded possession pairs were invalid and were masked, not rescaled. 3,230 penalty-eligible matches would have been lost to the old low-penalty-rate rule. Finished seasons are not necessarily complete source coverage; data-audit-coverage.csv reports missing fixtures. 23 matches have conflicting ESPN and football-data scores, listed in data-audit-score-disagreements.csv. No source is declared correct by this audit. The internal Elo still uses ESPN results, so score errors can affect that strength control.</p>
+<p>The earlier draft's causal language is not supported by this audit. Club ranks are descriptive, not permutation tests, because club labels are not exchangeable. The 2018 split is descriptive, not an identified effect of the reported payments. The stoppage variable measures the final-whistle clock rather than the announced minimum, and injury, substitution and time-wasting exposure is incomplete. I do not treat the earlier stoppage association as the clearest evidence of favoritism.</p>
+<p>Penalty eligibility now requires a regulation-end marker and goals that reconcile through extra time. That does not prove all missed penalties or penalty labels are recorded. Abandoned matches are excluded; regulation scores no longer subtract goals from a final score that includes extra time.</p>
+<p>Definitions: <a href='https://www.theifab.com/laws/latest/fouls-and-misconduct/'>IFAB Law 12</a>; <a href='https://www.theifab.com/laws/latest/the-duration-of-the-match/'>IFAB Law 7</a>.</p>
+<p><a href='tables/analysis-headlines.csv'>Headline estimates CSV</a> | <a href='tables/data-audit-coverage.csv'>Coverage audit CSV</a> | <a href='tables/artifact-manifest.csv'>Artifact hashes</a></p>
+</html>

@@ -24,8 +24,11 @@ stat_names <- c("foulsCommitted", "yellowCards", "redCards", "possessionPct",
 
 parse_espn <- function(path) {
   d <- tryCatch(fromJSON(gzfile(path), simplifyVector = FALSE),
-                error = function(e) NULL)
-  if (is.null(d) || is.null(d$header)) return(NULL)
+                error = function(e) stop(sprintf("Cannot parse %s: %s",
+                  path, conditionMessage(e)), call. = FALSE))
+  if (is.null(d$header)) {
+    stop(sprintf("Missing match header in %s", path), call. = FALSE)
+  }
   parts <- str_split(path, "/")[[1]]
   n <- length(parts)
   league <- parts[n - 2]
@@ -87,6 +90,11 @@ parse_espn <- function(path) {
     home_shootout = as.numeric(home$shootoutScore %||% NA),
     away_shootout = as.numeric(away$shootoutScore %||% NA),
     match_status = comp$status$type$name %||% NA_character_,
+    event_log_has_end = nrow(ev) > 0 &&
+      any(ev$type == "End Regular Time", na.rm = TRUE),
+    extra_time = comp$status$type$name %in%
+      c("STATUS_FINAL_AET", "STATUS_FINAL_PEN") ||
+      (nrow(ev) > 0 && any(ev$period %in% c(3L, 4L))),
     referee,
     attendance = as.numeric(d$gameInfo$attendance %||% NA),
     venue = d$gameInfo$venue$fullName %||% NA_character_,
@@ -151,6 +159,11 @@ ESPNMatches <- ESPNMatches |>
   distinct(dup_key, .keep_all = TRUE) |>
   select(-dup_key, -slug_ok)
 
+
+# October 2026 audit: an abandoned fixture is not a completed full match.
+ESPNMatches <- ESPNMatches |>
+  filter(match_status %in% c("STATUS_FULL_TIME", "STATUS_FINAL_AET",
+                             "STATUS_FINAL_PEN", "STATUS_FINAL_AGT"))
 # Stoppage time is not recorded in early seasons (every match shows "90'").
 # Treat a league-season as missing when fewer than 5% of matches show added time.
 ESPNMatches <- ESPNMatches |>
@@ -175,6 +188,22 @@ for (s in c("foulsCommitted", "possessionPct", "totalShots", "shotsOnTarget",
             "wonCorners", "offsides", "saves", "totalPasses", "accuratePasses")) {
   ESPNMatches <- both_zero_na(ESPNMatches, s)
 }
+
+# October 2026 audit: one-sided zeros and 100/0 splits are source errors,
+# not extreme playing styles. Do not manufacture possession by rescaling.
+ESPNMatches <- ESPNMatches |>
+  mutate(possession_valid = !is.na(home_possessionPct) &
+           !is.na(away_possessionPct) &
+           home_possessionPct > 0 & home_possessionPct < 100 &
+           away_possessionPct > 0 & away_possessionPct < 100 &
+           abs(home_possessionPct + away_possessionPct - 100) <= 1,
+         possession_source_invalid =
+           (!is.na(home_possessionPct) | !is.na(away_possessionPct)) &
+           !possession_valid,
+         home_possessionPct = if_else(possession_valid,
+                                       home_possessionPct, NA_real_),
+         away_possessionPct = if_else(possession_valid,
+                                       away_possessionPct, NA_real_))
 ESPNMatches <- ESPNMatches |>
   mutate(across(matches("_(yellowCards|redCards)$"), \(v) if_else(has_box, v, NA_real_))) |>
   select(-matches("penaltyKick"))

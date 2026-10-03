@@ -224,6 +224,8 @@ data/raw/**
 data/datasets/**
 !data/datasets/.gitkeep
 output/logs/*.log
+output/logs/*.txt
+output/tables/*.dta
 .DS_Store
 .Rhistory
 .RData

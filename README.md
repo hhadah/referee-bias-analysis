@@ -7,6 +7,17 @@ League from 2001/02 to the present, and asks where FC Barcelona sits relative
 to every other club, before and after the end of the reported Negreira
 payments (2001–2018).
 
+## October 2026 update
+
+The [analysis supplement](my_paper/analysis-update.pdf) and
+[browser report](output/analysis-report.html) add possession-adjusted
+comparisons and pooled Champions League estimates. These remain descriptive
+comparisons, not estimates of incorrect decisions.
+[Next-step recommendations](notes/next-steps.md) prioritize source completeness,
+comparable playing styles, incident-level outcomes and small-sample inference.
+They distinguish completed work from changes still needed before updating
+the original manuscript.
+
 ## Project layout
 
 ```
@@ -29,6 +40,11 @@ referee-bias-analysis/
 │   ├── 14-figures-four-to-seven-elite-clubs-by-season.R
 │   ├── 15-table-six-real-madrid-champions-league-by-season.R
 │   ├── 16-figure-eight-tables-seven-eight-real-madrid-champions-league-gaps.R
+│   ├── 17-barcelona-style-adjusted-decisions.R
+│   ├── 18-champions-league-pooled-precision.R
+│   ├── 19-card-timing-diagnostics.R
+│   ├── 20-build-analysis-report.R
+│   ├── 94-verify-analysis.R
 │   └── 95-make-all.R         # master script: directories + full pipeline
 ├── data/
 │   ├── raw/                  # untouched downloads (git-ignored)
@@ -47,24 +63,50 @@ referee-bias-analysis/
 
 ## Reproducing
 
-1. Install R (≥ 4.3) and Python 3 (standard library only). R packages are loaded
-   with `pacman::p_load()` in `programs/95-make-all.R`.
-2. Set `run_downloads <- TRUE` in `programs/95-make-all.R` for a fresh run. The
-   ESPN scrape covers about 50,000 match pages and takes 45–60 minutes. It is
-   cached and idempotent, so re-running only adds new matches.
-3. Run from the project root:
+R 4.5.2 was used with data.table 1.18.2.1, fixest 0.12.1, ggplot2 4.0.2,
+haven 2.5.5 and patchwork 1.3.1. The runner checks required packages and
+installs nothing. It uses local fonts and does not fetch a Google font.
 
-   ```bash
-   Rscript programs/95-make-all.R
-   ```
+From the project root:
 
-Every table and figure is written by code into `output/` and copied into
-`my_paper/`. Nothing is edited by hand.
+```bash
+Rscript programs/95-make-all.R
+latexmk -cd -pdf -interaction=nonstopmode -halt-on-error my_paper/analysis-update.tex
+```
 
-## Current findings
+The first command rebuilds the data from cached sources, runs programs
+17–20 and verifies the data and inference invariants in program 94.
+`REFEREE_BIAS_ROOT` can point to another checkout. Seed: `20261003`.
+Logs and package versions go to `output/logs/analysis-<run-id>.log` and
+`session-<run-id>.txt`. Every main result has CSV and DTA output;
+`output/tables/artifact-manifest.csv` records output hashes.
 
-See `notes/findings-memo.md` for a summary and `my_paper/main.pdf` for the
-draft paper.
+Options:
+
+- `--analysis-only`: reuse the already rebuilt panel and rerun 17–20 and 94.
+- `--download`: refresh public source downloads before rebuilding.
+- `--legacy`: also regenerate exploratory programs 06–16. Their old
+  significance claims and rankings are not the current evidence report.
+  This option requires the original table-rendering packages.
+
+## Current findings and figures
+
+- [Browser report with seven figures](output/analysis-report.html)
+- [PDF analysis supplement](my_paper/analysis-update.pdf)
+- [Generated findings memo](notes/findings-memo-possession-adjusted.md)
+- [Headline estimates and multiple-testing adjustment](output/tables/analysis-headlines.csv)
+- [Data coverage audit](output/tables/data-audit-coverage.csv)
+
+The original `my_paper/main.tex`, its authored fragments and
+`notes/findings-memo.md` are preserved. They predate this audit; use the
+separate supplement for updated estimates and qualifications.
+
+The Barcelona specifications hold the sample fixed, compare prior-match
+and same-match style controls, report called-foul-adjusted card outcomes,
+and show where comparable possession observations are missing. The
+Champions League analysis pools seasons, reports detectable effect sizes
+and equivalence bounds, checks leave-one-season-out stability, and labels
+seasonal shrinkage intervals as conditional model-based summaries.
 
 ## Data sources
 

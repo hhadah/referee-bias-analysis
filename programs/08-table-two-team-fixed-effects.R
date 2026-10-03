@@ -12,9 +12,9 @@
 
 Panel <- load_panel() |> filter(domestic == 1)
 
-# Columns (9)-(10): yellow cards conditional on the number of fouls called, a
-# measure of the referee's severity that does not depend on how often a team
-# has the ball
+# Columns (9)-(10): yellow cards conditional on called fouls. This is a
+# descriptive sanction comparison, not a probability of a card per foul:
+# dissent/time-wasting cards and uncalled or differently severe fouls remain.
 outcomes <- c("own_yellow", "opp_yellow", "own_red", "opp_red",
               "own_fouls", "opp_fouls", "own_pens", "opp_pens",
               "own_yellow", "opp_yellow")
@@ -85,11 +85,11 @@ tab2 <- modelsummary(
     "opponent). Barcelona, Real Madrid and Other elite clubs are team indicators, so each ",
     "coefficient is the difference relative to the average non-elite team in the same ",
     "league-season facing the same opponent at the same pre-match win probability. Cards and ",
-    "fouls cover 2005/06--2025/26; penalties cover 2001/02--2025/26 league-seasons with ",
-    "complete penalty records. Columns (9) and (10) condition on the number of fouls called ",
-    "against the carded side, so they measure the referee's severity per foul. Panel B adds ",
-    "fixed effects for 2.5-point possession bins and both teams' shots, which may themselves ",
-    "respond to refereeing decisions. Standard errors clustered at the team-season level in parentheses."),
+    "fouls cover 2005/06--2025/26; penalties use matches with ",
+    "eligible penalty event logs. Columns (9) and (10) condition on called fouls ",
+    "but cannot hold foul severity or non-foul misconduct fixed. Panel B adds ",
+    "possession bins and both teams' shots, which can respond to refereeing decisions. ",
+    "Standard errors clustered at the team-season level in parentheses."),
     threeparttable = TRUE, escape = FALSE, footnote_as_chunk = TRUE)
 
 save_table(tab2, "table-two-team-fixed-effects.tex")

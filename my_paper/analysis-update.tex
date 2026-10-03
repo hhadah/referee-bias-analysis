@@ -1,0 +1,42 @@
+\pdfminorversion=7
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,booktabs,graphicx,float,hyperref}
+\hypersetup{hidelinks}
+\title{Refereeing Gaps after Accounting for Playing Style}
+\author{Hussain Hadah}\date{\today}
+\begin{document}\maketitle
+\begin{abstract}\input{fragments/analysis-update-abstract}\end{abstract}
+\input{fragments/analysis-update-introduction}\input{fragments/analysis-update-data}
+\input{fragments/analysis-update-empirical-strategy}\input{fragments/analysis-update-results}
+\input{fragments/analysis-update-conclusion}
+\clearpage\input{tables/table-rm-ucl-pooled-precision}
+\clearpage\begin{figure}[p]\centering
+\caption{Barcelona: raw and adjusted differences}\label{fig:barcelona-ladder}
+\includegraphics[width=\textwidth,height=.85\textheight,keepaspectratio]{figure/figure-barcelona-style-ladder.pdf}
+\end{figure}
+\clearpage\begin{figure}[p]\centering
+\caption{Possession and the observed decision rates}\label{fig:barcelona-possession}
+\includegraphics[width=\textwidth,height=.85\textheight,keepaspectratio]{figure/figure-barcelona-style-possession-diagnostic.pdf}
+\end{figure}
+\clearpage\begin{figure}[p]\centering
+\caption{Barcelona: eras and overlap}\label{fig:barcelona-robustness}
+\includegraphics[width=\textwidth,height=.85\textheight,keepaspectratio]{figure/figure-barcelona-style-robustness.pdf}
+\end{figure}
+\clearpage\begin{figure}[p]\centering
+\caption{Madrid: pooled Champions League comparisons}\label{fig:rmuclcomparisons}
+\includegraphics[width=\textwidth,height=.85\textheight,keepaspectratio]{figure/figure-rm-ucl-pooled-comparisons.pdf}
+\end{figure}
+\clearpage\begin{figure}[p]\centering
+\caption{Madrid: what the sample can detect}\label{fig:rmuclprecision}
+\includegraphics[width=\textwidth,height=.85\textheight,keepaspectratio]{figure/figure-rm-ucl-precision-limits.pdf}
+\end{figure}
+\clearpage\begin{figure}[p]\centering
+\caption{Madrid: seasonal uncertainty and stability}\label{fig:rmuclstability}
+\includegraphics[width=\textwidth,height=.85\textheight,keepaspectratio]{figure/figure-rm-ucl-season-stability.pdf}
+\end{figure}
+\clearpage\begin{figure}[p]\centering
+\caption{Early-card diagnostic}\label{fig:card-timing}
+\includegraphics[width=\textwidth,height=.85\textheight,keepaspectratio]{figure/card-timing-diagnostic.pdf}
+\end{figure}
+\end{document}

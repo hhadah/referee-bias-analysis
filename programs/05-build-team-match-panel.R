@@ -170,18 +170,18 @@ Matches <- Matches |>
     referee = coalesce(referee, fd_referee)
   )
 
-# Score at the end of regulation (before second-half stoppage time) from the
-# goal events (VAR review entries excluded). ESPN attributes own goals to the
-# benefiting team; the score is kept only when the event goals reconcile with
-# the final score.
+# October 2026 audit: reconcile goals including extra time, then reconstruct
+# the score before second-half stoppage from regulation goals only.
+# The end-clock marker documents event-log presence, not penalty completeness.
 GoalEvents <- read_csv(file.path(datasets, "espn-key-events.csv"),
                        col_types = cols(event_id = "c", team_id = "c", clock = "c",
                                         type = "c"),
                        show_col_types = FALSE) |>
   filter(!shootout, str_detect(type, "^(Goal|Own Goal)") | type == "Penalty - Scored",
-         is.na(period) | period <= 2) |>
+         is.na(period) | period <= 4) |>
   group_by(event_id, team_id) |>
   summarise(goals_ev = n(),
+            goals_regulation = sum(is.na(period) | period <= 2),
             goals_2h = sum(period == 2, na.rm = TRUE),
             goals_stoppage = sum(period == 2 & str_detect(clock, "^90'\\+"), na.rm = TRUE),
             .groups = "drop")
@@ -191,22 +191,25 @@ Matches <- Matches |>
               rename(home_id = home_team_id), by = c("event_id", "home_id")) |>
   left_join(GoalEvents |> rename_with(\(v) paste0("away_", v), -event_id) |>
               rename(away_id = away_team_id), by = c("event_id", "away_id")) |>
-  mutate(across(matches("^(home|away)_goals_(ev|2h|stoppage)$"), \(v) replace_na(v, 0)),
+  mutate(across(matches("^(home|away)_goals_(ev|regulation|2h|stoppage)$"),
+                \(v) replace_na(v, 0)),
          goals_ok = home_goals_ev == home_score & away_goals_ev == away_score,
          margin_90_home = if_else(goals_ok,
-                                  (home_score - home_goals_stoppage) - (away_score - away_goals_stoppage),
+                                  (home_goals_regulation - home_goals_stoppage) -
+                                    (away_goals_regulation - away_goals_stoppage),
                                   NA_real_),
          goals_2h_regulation = home_goals_2h + away_goals_2h - home_goals_stoppage -
            away_goals_stoppage)
 
-# Penalty series validity: flag league-seasons whose recorded penalty rate is
-# implausibly low (incomplete event logs in some early ESPN seasons). Champions
-# League qualifying rounds, which often lack event logs, are assessed separately.
+# October 2026 audit: never select seasons by the penalty outcome itself.
+# Eligibility requires a recorded regulation-end marker and reconciled goals.
+# This detects absent/truncated logs, not every mislabeled or missing penalty.
 Matches <- Matches |>
-  group_by(league, season_start, qualifying = coalesce(ucl_stage == "Qualifying", FALSE)) |>
-  mutate(pens_rate_ls = mean(home_pens + away_pens),
-         pens_ok = pens_rate_ls >= 0.15) |>
+  group_by(league, season_start,
+           qualifying = coalesce(ucl_stage == "Qualifying", FALSE)) |>
+  mutate(pens_rate_ls = mean(home_pens + away_pens)) |>
   ungroup() |>
+  mutate(pens_ok = event_log_has_end & goals_ok) |>
   select(-qualifying)
 
 write_csv(Matches, file.path(datasets, "matches.csv"))
@@ -222,6 +225,7 @@ make_side <- function(df, own, opp, is_home) {
   df |>
     select(event_id, league, league_name, competition, ucl_stage, season_start,
            date, neutral_site, referee, attendance, stoppage_1h, stoppage_2h,
+           extra_time, event_log_has_end, goals_ok, possession_valid,
            pens_ok, margin_90_home, goals_2h_regulation,
            all_of(c(own_cols, opp_cols)),
            prob_home, prob_away, elo_exp_home) |>
@@ -249,7 +253,9 @@ TeamMatch <- bind_rows(
     barca          = as.integer(team_id == "83"),
     real_madrid    = as.integer(team_id == "86"),
     negreira_era   = as.integer(season_start <= negreira_last_season),
-    var_era        = as.integer(season_start >= var_first_season[league]),
+    var_era        = as.integer(season_start >= var_first_season[league] &
+                       !(league == "uefa.champions" & season_start == 2018 &
+                           ucl_stage != "Knockout")),
     league_season  = paste(league, season_start),
     team_season    = paste(team_id, season_start)
   ) |>

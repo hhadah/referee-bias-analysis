@@ -1,17 +1,17 @@
 ################################################################################
 # 13-table-five-exposure-adjusted-fouls.R
-# Purpose: Table 5 -- fouls normalized by exposure. A team can only be fouled
-#          while it has the ball and can only commit fouls while the opponent
-#          has it, so possession is the natural exposure measure:
+# Purpose: Table 5 -- descriptive foul normalizations. Possession is a proxy
+#          for exposure, not time at risk: fouls can occur off the ball.
+#          Compare the following sensitivity specifications:
 #            (1)-(2) fouls per 10 minutes of possession (OLS on the rate);
 #            (3)-(4) Poisson with log possession share as an offset, which
 #                    imposes fouls proportional to possession;
 #            (5)-(6) Poisson with log possession share as a regressor, which
 #                    estimates the elasticity instead of imposing one;
 #            (7)-(8) fouls per 100 passes, a volume-based exposure measure.
-#          "Suffered" = fouls called on the opponent while the team has the
-#          ball (exposure: own possession); "committed" = fouls called on the
-#          team (exposure: opponent possession).
+#          "Suffered" = all fouls called on the opponent, normalized by own
+#          possession. "Committed" = fouls called on the team, normalized by
+#          opponent possession. Neither denominator measures foul opportunities.
 # Input:   data/datasets/team-match-panel.csv
 # Output:  output/tables/table-five-exposure-adjusted-fouls.tex
 # Date:    2026-10-02

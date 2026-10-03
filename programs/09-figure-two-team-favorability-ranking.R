@@ -3,8 +3,8 @@
 # Purpose: Figure 2 -- team "favorability" fixed effects for every club with
 #          at least 150 domestic-league matches, from equation (2):
 #          net decision_im = alpha_team + mu_opponent + league-season FE +
-#          win-probability FE + home + e. Barcelona's rank among all clubs is
-#          the placebo (permutation) benchmark for its estimate.
+#          win-probability FE + home + e. Ranks are descriptive only:
+#          club labels are not randomized or exchangeable.
 # Input:   data/datasets/team-match-panel.csv
 # Output:  output/figures/figure-two-team-favorability-ranking.pdf/.png
 #          output/tables/team-favorability-ranks.csv
@@ -58,7 +58,7 @@ Ranks <- expand_grid(y = rank_outcomes, style = c(FALSE, TRUE)) |>
 
 write_csv(Ranks, file.path(tables_wd, "team-favorability-ranks.csv"))
 
-# Permutation-style benchmark: share of clubs at least as favored as Barcelona
+# Descriptive rank share, not a permutation test or a p-value.
 BarcaRanks <- Ranks |>
   filter(team_id == "83") |>
   transmute(outcome, spec, fe, rank, n_teams, percentile,
@@ -75,7 +75,7 @@ fig2 <- ggplot(Ranks |> arrange(desc(highlight)), aes(rank, fe)) +
   geom_hline(yintercept = 0, colour = "grey50") +
   geom_point(aes(colour = highlight, size = highlight)) +
   ggrepel::geom_text_repel(data = label_df, aes(label = label, colour = highlight),
-                           size = 3, family = "Fira Sans", fontface = "bold",
+                           size = 3, family = "sans", fontface = "bold",
                            min.segment.length = 0, box.padding = 0.6,
                            nudge_x = 25, show.legend = FALSE) +
   facet_wrap(vars(spec, outcome_lab), ncol = length(rank_outcomes), scales = "free_y",
@@ -86,7 +86,7 @@ fig2 <- ggplot(Ranks |> arrange(desc(highlight)), aes(rank, fe)) +
                                  "All other clubs" = colors_customs[["other"]])) +
   scale_size_manual(values = c(3, 3, 1.8, 1.1), guide = "none") +
   labs(x = "Rank (1 = most favorable)", y = "Club fixed effect (per match)", colour = NULL,
-       title = "How favorable are referees to each club? Domestic leagues",
+       title = "Conditional net decisions by club: domestic leagues",
        subtitle = paste0("Club fixed effects relative to the average club in the same league; clubs with ",
                          min_matches, "+ matches"),
        caption = paste("Each point is a club's fixed effect from a regression of the net decision on club,",

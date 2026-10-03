@@ -1,0 +1,145 @@
+"outcome","panel","group","poss_bin17","poss_mid","value","ci_low","ci_high","n"
+"own_fouls","Fouls called against the team","Non-elite",40,42.5,15.4678515420805,15.252601024221,15.6831020599399,1913
+"own_fouls","Fouls called against the team","Non-elite",55,57.5,14.4063604240283,14.2000266486883,14.6126941993682,1698
+"own_fouls","Fouls called against the team","Non-elite",35,37.5,15.5562174236784,15.2999138623183,15.8125209850385,1343
+"own_fouls","Fouls called against the team","Real Madrid",60,62.5,11.9360465116279,11.2836838523102,12.5884091709456,172
+"own_fouls","Fouls called against the team","Non-elite",45,47.5,15.3492496589359,15.1481818937174,15.5503174241545,2199
+"own_fouls","Fouls called against the team","Non-elite",50,52.5,14.7372330547818,14.5487662280414,14.9256998815222,2154
+"own_fouls","Fouls called against the team","Real Madrid",55,57.5,13.1836734693877,12.3811568797073,13.9861900590682,147
+"own_fouls","Fouls called against the team","Non-elite",60,62.5,13.6426484907498,13.3895548572531,13.8957421242465,1027
+"own_fouls","Fouls called against the team","Non-elite",30,32.5,15.7650676506765,15.4275847239587,16.1025505773943,813
+"own_fouls","Fouls called against the team","Non-elite",65,67.5,13.1465201465201,12.8161117047357,13.4769285883046,546
+"own_fouls","Fouls called against the team","Non-elite",25,27.5,14.9325513196481,14.4099852557838,15.4551173835124,341
+"own_fouls","Fouls called against the team","Real Madrid",70,72.5,10.3409090909091,9.15565110288533,11.5261670789328,44
+"own_fouls","Fouls called against the team","Barcelona",55,57.5,13.1195652173913,12.1440976557613,14.0950327790213,92
+"own_fouls","Fouls called against the team","Barcelona",60,62.5,12.2330827067669,11.4928966740368,12.973268739497,133
+"own_fouls","Fouls called against the team","Barcelona",65,67.5,12.1703296703297,11.5460688128119,12.7945905278474,182
+"own_fouls","Fouls called against the team","Real Madrid",50,52.5,13.8240740740741,12.7500955372457,14.8980526109025,108
+"own_fouls","Fouls called against the team","Real Madrid",65,67.5,11.4414414414414,10.6886067455145,12.1942761373684,111
+"own_fouls","Fouls called against the team","Non-elite",70,72.5,11.8125,11.2807010754488,12.3442989245512,144
+"own_fouls","Fouls called against the team","Non-elite",20,22.5,13.7222222222222,12.7326577266736,14.7117867177708,108
+"own_fouls","Fouls called against the team","Barcelona",75,77.5,9.41891891891892,8.63505793381525,10.2027799040226,74
+"own_fouls","Fouls called against the team","Real Madrid",45,47.5,14.6103896103896,13.5439974824606,15.6767817383186,77
+"own_fouls","Fouls called against the team","Barcelona",50,52.5,12.2285714285714,10.7842745713552,13.6728682857877,35
+"own_fouls","Fouls called against the team","Barcelona",70,72.5,10.3105590062112,9.7903734569395,10.8307445554829,161
+"own_fouls","Fouls called against the team","Real Madrid",40,42.5,14.5806451612903,12.8783164956435,16.2829738269371,31
+"own_fouls","Fouls called against the team","Non-elite",75,77.5,11.1785714285714,9.7851331018521,12.5720097552908,28
+"own_fouls","Fouls called against the team","Barcelona",80,82.5,9.1,7.54299910421552,10.6570008957845,20
+"own_fouls","Fouls called against the team","Non-elite",15,17.5,12.7826086956522,11.0401455647647,14.5250718265396,23
+"opp_fouls","Fouls called against the opponent","Non-elite",40,42.5,14.2294824882384,14.0299937336893,14.4289712427875,1913
+"opp_fouls","Fouls called against the opponent","Non-elite",55,57.5,15.5023557126031,15.2738057039959,15.7309057212102,1698
+"opp_fouls","Fouls called against the opponent","Non-elite",35,37.5,13.3090096798213,13.0793321346034,13.5386872250392,1343
+"opp_fouls","Fouls called against the opponent","Real Madrid",60,62.5,14.9651162790698,14.2479495936487,15.6822829644909,172
+"opp_fouls","Fouls called against the opponent","Non-elite",45,47.5,14.6589358799455,14.467481284181,14.8503904757099,2199
+"opp_fouls","Fouls called against the opponent","Non-elite",50,52.5,15.3300835654597,15.1269795490528,15.5331875818665,2154
+"opp_fouls","Fouls called against the opponent","Real Madrid",55,57.5,14.8843537414966,14.0995420596574,15.6691654233358,147
+"opp_fouls","Fouls called against the opponent","Non-elite",60,62.5,15.6601752677702,15.371720423591,15.9486301119494,1027
+"opp_fouls","Fouls called against the opponent","Non-elite",30,32.5,12.6789667896679,12.3970752894461,12.9608582898897,813
+"opp_fouls","Fouls called against the opponent","Non-elite",65,67.5,15.7783882783883,15.3743964606476,16.182380096129,546
+"opp_fouls","Fouls called against the opponent","Non-elite",25,27.5,10.9589442815249,10.5844153516529,11.333473211397,341
+"opp_fouls","Fouls called against the opponent","Real Madrid",70,72.5,16.1590909090909,14.4937513830258,17.824430435156,44
+"opp_fouls","Fouls called against the opponent","Barcelona",55,57.5,16.2934782608696,15.2587985984712,17.3281579232679,92
+"opp_fouls","Fouls called against the opponent","Barcelona",60,62.5,15.9248120300752,15.0764297228323,16.7731943373181,133
+"opp_fouls","Fouls called against the opponent","Barcelona",65,67.5,15.7032967032967,14.9735905671385,16.4330028394549,182
+"opp_fouls","Fouls called against the opponent","Real Madrid",50,52.5,15.5925925925926,14.6646771612748,16.5205080239104,108
+"opp_fouls","Fouls called against the opponent","Real Madrid",65,67.5,15.6486486486487,14.799958155828,16.4973391414693,111
+"opp_fouls","Fouls called against the opponent","Non-elite",70,72.5,14.9791666666667,14.161822105361,15.7965112279723,144
+"opp_fouls","Fouls called against the opponent","Non-elite",20,22.5,9.87962962962963,9.1893241274457,10.5699351318136,108
+"opp_fouls","Fouls called against the opponent","Barcelona",75,77.5,13.7837837837838,12.5964035366572,14.9711640309103,74
+"opp_fouls","Fouls called against the opponent","Real Madrid",45,47.5,15.1688311688312,14.1835517832787,16.1541105543836,77
+"opp_fouls","Fouls called against the opponent","Barcelona",50,52.5,14.2857142857143,13.0087178096033,15.5627107618253,35
+"opp_fouls","Fouls called against the opponent","Barcelona",70,72.5,14.7577639751553,14.0444853818926,15.471042568418,161
+"opp_fouls","Fouls called against the opponent","Real Madrid",40,42.5,14.6774193548387,13.1581570331572,16.1966816765202,31
+"opp_fouls","Fouls called against the opponent","Non-elite",75,77.5,13.8928571428571,11.9633254399322,15.8223888457821,28
+"opp_fouls","Fouls called against the opponent","Barcelona",80,82.5,13.9,11.7962111372699,16.0037888627301,20
+"opp_fouls","Fouls called against the opponent","Non-elite",15,17.5,8.91304347826087,7.54135868889856,10.2847282676232,23
+"own_yellow","Yellow cards received","Non-elite",40,42.5,2.64506011500262,2.57810764015968,2.71201258984555,1913
+"own_yellow","Yellow cards received","Non-elite",55,57.5,2.52532391048292,2.45538087270037,2.59526694826547,1698
+"own_yellow","Yellow cards received","Non-elite",35,37.5,2.70439314966493,2.62235357592977,2.7864327234001,1343
+"own_yellow","Yellow cards received","Real Madrid",60,62.5,1.80232558139535,1.60794525867581,1.99670590411489,172
+"own_yellow","Yellow cards received","Non-elite",45,47.5,2.55843565256935,2.49614265638049,2.62072864875822,2199
+"own_yellow","Yellow cards received","Non-elite",50,52.5,2.44103992571959,2.38025051882132,2.50182933261786,2154
+"own_yellow","Yellow cards received","Real Madrid",55,57.5,2.17687074829932,1.94770377030036,2.40603772629828,147
+"own_yellow","Yellow cards received","Non-elite",60,62.5,2.41480038948393,2.32582772662976,2.50377305233811,1027
+"own_yellow","Yellow cards received","Non-elite",30,32.5,2.75153751537516,2.64301553392872,2.86005949682159,813
+"own_yellow","Yellow cards received","Non-elite",65,67.5,2.35347985347985,2.23656652286385,2.47039318409586,546
+"own_yellow","Yellow cards received","Non-elite",25,27.5,2.6891495601173,2.51051568970714,2.86778343052747,341
+"own_yellow","Yellow cards received","Real Madrid",70,72.5,2.02272727272727,1.61724013915697,2.42821440629758,44
+"own_yellow","Yellow cards received","Barcelona",55,57.5,2.1195652173913,1.86458700877481,2.37454342600779,92
+"own_yellow","Yellow cards received","Barcelona",60,62.5,2.03759398496241,1.79416221227721,2.2810257576476,133
+"own_yellow","Yellow cards received","Barcelona",65,67.5,2.02747252747253,1.81507009599066,2.23987495895439,182
+"own_yellow","Yellow cards received","Real Madrid",50,52.5,2.12037037037037,1.88164296097674,2.359097779764,108
+"own_yellow","Yellow cards received","Real Madrid",65,67.5,1.94594594594595,1.71901678330993,2.17287510858196,111
+"own_yellow","Yellow cards received","Non-elite",70,72.5,2.04166666666667,1.83284160595099,2.25049172738234,144
+"own_yellow","Yellow cards received","Non-elite",20,22.5,2.5462962962963,2.24406753522776,2.84852505736484,108
+"own_yellow","Yellow cards received","Barcelona",75,77.5,1.47297297297297,1.16376360931906,1.78218233662689,74
+"own_yellow","Yellow cards received","Real Madrid",45,47.5,2.33766233766234,2.00634128382882,2.66898339149586,77
+"own_yellow","Yellow cards received","Barcelona",50,52.5,2.08571428571429,1.59450401565495,2.57692455577362,35
+"own_yellow","Yellow cards received","Barcelona",70,72.5,1.75155279503106,1.53307853592862,1.97002705413349,161
+"own_yellow","Yellow cards received","Real Madrid",40,42.5,2.96774193548387,2.50890085514117,3.42658301582657,31
+"own_yellow","Yellow cards received","Non-elite",75,77.5,2.35714285714286,1.79391143966898,2.92037427461673,28
+"own_yellow","Yellow cards received","Barcelona",80,82.5,1.35,0.664,2.036,20
+"own_yellow","Yellow cards received","Non-elite",15,17.5,2.04347826086957,1.43382052316717,2.65313599857196,23
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",40,42.5,-0.184004181913226,-0.269424364905643,-0.0985839989208084,1913
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",55,57.5,0.143109540636043,0.0526767076535926,0.233542373618492,1698
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",35,37.5,-0.405807892777366,-0.508793083885828,-0.302822701668904,1343
+"net_yellow","Net yellow cards (opp. - own)","Real Madrid",60,62.5,0.994186046511628,0.730337304076341,1.25803478894692,172
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",45,47.5,-0.120964074579354,-0.201988320480067,-0.0399398286786403,2199
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",50,52.5,0.0826369545032492,0.000193118466685682,0.165080790539813,2154
+"net_yellow","Net yellow cards (opp. - own)","Real Madrid",55,57.5,0.319727891156463,0.0455505551716441,0.593905227141281,147
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",60,62.5,0.296981499513146,0.177092689577486,0.416870309448805,1027
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",30,32.5,-0.531365313653135,-0.660878410806316,-0.401852216499954,813
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",65,67.5,0.509157509157509,0.347173596817875,0.671141421497143,546
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",25,27.5,-0.747800586510264,-0.94722865790075,-0.548372515119777,341
+"net_yellow","Net yellow cards (opp. - own)","Real Madrid",70,72.5,0.477272727272727,-0.0462382946944171,1.00078374923987,44
+"net_yellow","Net yellow cards (opp. - own)","Barcelona",55,57.5,0.717391304347826,0.34350151740677,1.09128109128888,92
+"net_yellow","Net yellow cards (opp. - own)","Barcelona",60,62.5,0.766917293233083,0.468204871236357,1.06562971522981,133
+"net_yellow","Net yellow cards (opp. - own)","Barcelona",65,67.5,0.598901098901098,0.324914376501765,0.872887821300432,182
+"net_yellow","Net yellow cards (opp. - own)","Real Madrid",50,52.5,0.537037037037037,0.199434614329336,0.874639459744738,108
+"net_yellow","Net yellow cards (opp. - own)","Real Madrid",65,67.5,0.666666666666667,0.347059072155813,0.986274261177521,111
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",70,72.5,0.819444444444445,0.505205481570977,1.13368340731791,144
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",20,22.5,-0.907407407407407,-1.21416996676404,-0.600644848050773,108
+"net_yellow","Net yellow cards (opp. - own)","Barcelona",75,77.5,0.783783783783784,0.425467825577454,1.14209974199011,74
+"net_yellow","Net yellow cards (opp. - own)","Real Madrid",45,47.5,0.285714285714286,-0.130359870355618,0.701788441784189,77
+"net_yellow","Net yellow cards (opp. - own)","Barcelona",50,52.5,0.342857142857143,-0.258136544101968,0.943850829816254,35
+"net_yellow","Net yellow cards (opp. - own)","Barcelona",70,72.5,0.962732919254659,0.676918062528942,1.24854777598037,161
+"net_yellow","Net yellow cards (opp. - own)","Real Madrid",40,42.5,-0.0322580645161291,-0.610581259326108,0.54606513029385,31
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",75,77.5,0.75,0.0470248410689934,1.45297515893101,28
+"net_yellow","Net yellow cards (opp. - own)","Barcelona",80,82.5,0.8,-0.211473547277488,1.81147354727749,20
+"net_yellow","Net yellow cards (opp. - own)","Non-elite",15,17.5,-0.782608695652174,-1.67081907807898,0.105601686774627,23
+"support","Share of the group's matches in each bin","Non-elite",40,42.5,0.155011749453043,NA,NA,1913
+"support","Share of the group's matches in each bin","Non-elite",55,57.5,0.137590146665586,NA,NA,1698
+"support","Share of the group's matches in each bin","Non-elite",35,37.5,0.108824244388623,NA,NA,1343
+"support","Share of the group's matches in each bin","Real Madrid",60,62.5,0.237569060773481,NA,NA,172
+"support","Share of the group's matches in each bin","Non-elite",45,47.5,0.178186532695892,NA,NA,2199
+"support","Share of the group's matches in each bin","Non-elite",50,52.5,0.174540150717122,NA,NA,2154
+"support","Share of the group's matches in each bin","Real Madrid",55,57.5,0.203038674033149,NA,NA,147
+"support","Share of the group's matches in each bin","Non-elite",60,62.5,0.0832185398265943,NA,NA,1027
+"support","Share of the group's matches in each bin","Non-elite",30,32.5,0.0658779677497772,NA,NA,813
+"support","Share of the group's matches in each bin","Non-elite",65,67.5,0.0442427680090754,NA,NA,546
+"support","Share of the group's matches in each bin","Non-elite",25,27.5,0.0276314723280123,NA,NA,341
+"support","Share of the group's matches in each bin","Real Madrid",70,72.5,0.0607734806629834,NA,NA,44
+"support","Share of the group's matches in each bin","Barcelona",55,57.5,0.128851540616246,NA,NA,92
+"support","Share of the group's matches in each bin","Barcelona",60,62.5,0.186274509803922,NA,NA,133
+"support","Share of the group's matches in each bin","Barcelona",65,67.5,0.254901960784314,NA,NA,182
+"support","Share of the group's matches in each bin","Real Madrid",50,52.5,0.149171270718232,NA,NA,108
+"support","Share of the group's matches in each bin","Real Madrid",65,67.5,0.153314917127072,NA,NA,111
+"support","Share of the group's matches in each bin","Non-elite",70,72.5,0.0116684223320639,NA,NA,144
+"support","Share of the group's matches in each bin","Non-elite",20,22.5,0.00875131674904789,NA,NA,108
+"support","Share of the group's matches in each bin","Barcelona",75,77.5,0.103641456582633,NA,NA,74
+"support","Share of the group's matches in each bin","Real Madrid",45,47.5,0.106353591160221,NA,NA,77
+"support","Share of the group's matches in each bin","Barcelona",50,52.5,0.0490196078431373,NA,NA,35
+"support","Share of the group's matches in each bin","Barcelona",70,72.5,0.225490196078431,NA,NA,161
+"support","Share of the group's matches in each bin","Real Madrid",40,42.5,0.042817679558011,NA,NA,31
+"support","Share of the group's matches in each bin","Barcelona",45,47.5,0.0196078431372549,NA,NA,14
+"support","Share of the group's matches in each bin","Real Madrid",30,32.5,0.0138121546961326,NA,NA,10
+"support","Share of the group's matches in each bin","Real Madrid",75,77.5,0.0138121546961326,NA,NA,10
+"support","Share of the group's matches in each bin","Real Madrid",35,37.5,0.0124309392265193,NA,NA,9
+"support","Share of the group's matches in each bin","Non-elite",75,77.5,0.0022688598979013,NA,NA,28
+"support","Share of the group's matches in each bin","Barcelona",80,82.5,0.0280112044817927,NA,NA,20
+"support","Share of the group's matches in each bin","Non-elite",15,17.5,0.00186370634470464,NA,NA,23
+"support","Share of the group's matches in each bin","Real Madrid",20,22.5,0.00138121546961326,NA,NA,1
+"support","Share of the group's matches in each bin","Real Madrid",25,27.5,0.00414364640883978,NA,NA,3
+"support","Share of the group's matches in each bin","Barcelona",40,42.5,0.00420168067226891,NA,NA,3
+"support","Share of the group's matches in each bin","Non-elite",80,82.5,0.000324122842557329,NA,NA,4
+"support","Share of the group's matches in each bin","Real Madrid",80,82.5,0.00138121546961326,NA,NA,1

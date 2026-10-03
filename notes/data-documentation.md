@@ -1,6 +1,6 @@
 # Data documentation
 
-*Last updated: 2026-10-02. Data downloaded 2026-10-02.*
+*Last updated: 2026-10-03. Cached source downloads: 2026-10-02.*
 
 ## Sources
 
@@ -61,17 +61,21 @@
 - **Fouls and cards.** ESPN box score first, football-data.co.uk otherwise.
   Where both exist, they agree exactly in 92–98% of matches (correlation
   > 0.97). ESPN reports zeros for statistics it did not track; a statistic is
-  set to missing when both teams show zero.
-- **Penalties.** Counted from ESPN key events ("Penalty - Scored/Missed/Saved/
-  Hit Woodwork"), excluding shoot-outs and VAR review entries. ESPN's box-score
-  penalty counts are unreliable and are not used. League-seasons with fewer
-  than 0.15 recorded penalties per match are flagged `pens_ok = FALSE` and
-  excluded (incomplete early event logs).
-- **Score at 90 minutes.** Final score minus goals scored in second-half
-  stoppage time (clock `90'+`). It is kept only when the event-log goals
-  reconcile with the final score (`goals_ok`). VAR review entries ("VAR - Goal
-  Awarded", etc.) are excluded from goal counts. Own goals are attributed to
-  the benefiting team in ESPN's logs.
+  set to missing when both teams show zero. Possession additionally requires
+  both shares strictly between zero and 100 and a sum within one percentage
+  point of 100. Invalid pairs are masked, not renormalized.
+- **Penalties.** Counted from ESPN penalty-attempt key events, excluding
+  shoot-outs and VAR reviews. `pens_ok` now requires a recorded
+  `End Regular Time` marker and goal totals that reconcile to the final
+  score, including extra time. It never selects a season using its penalty
+  rate. This establishes event-log eligibility, not proof that every missed
+  penalty or penalty label is present, and not the correctness of an award.
+- **Score at 90 minutes.** Regulation goal events minus second-half stoppage
+  goals, conditional on all goal events reconciling to the final score.
+  Extra-time goals count in reconciliation but not in the regulation score.
+  VAR review entries do not count as goals.
+- **Final-whistle clock.** `stoppage_2h` records the `End Regular Time` clock,
+  not the announced minimum added time. These are different outcomes.
 - **Duplicates.** ESPN occasionally lists a match twice under different ids
   (e.g. Premier League 2009/10). The record with box-score data, then the one
   whose round slug names the season, is kept.
@@ -92,10 +96,15 @@
 - **Neutral venues.** ESPN never flags neutral sites. Champions League finals
   and the August 2020 final tournament in Lisbon (quarter-finals onward) are
   coded as neutral (no home team; no Elo home advantage).
-- **Winners.** `home_winner`/`away_winner` (ESPN header flags) account for
-  extra time and shoot-outs; shoot-out scores are in `home_shootout`/`away_shootout`.
-- **Analysis sample.** Complete seasons through 2025/26. Cards and fouls from
-  2005/06; penalties from 2001/02 where `pens_ok`.
+- **Winners and duration.** Winner flags account for extra time and shoot-outs.
+  `extra_time` uses final status and periods 3/4 in the event log. Box-score
+  counts can cover 120 minutes; they are per match, not per 90 minutes.
+  The new Champions League analysis includes a no-extra-time sensitivity.
+- **Analysis sample.** Finished seasons through 2025/26, excluding qualifying
+  and abandoned matches. "Finished" does not imply every fixture is in ESPN.
+  The audit compares domestic fixture counts with football-data.co.uk.
+  Cards and fouls start in 2005/06; model-specific complete-case rules
+  determine the actual sample.
 
 ## Coverage by league-season
 
@@ -111,10 +120,11 @@ Known gaps (analysis sample: complete seasons, no Champions League qualifiers):
 - **Possession** starts in 2005/06 (Spain) and 2007/08 (Italy, Germany,
   France, Champions League). In the Premier League it is missing for 2001/02 and
   2016/17, and partly for 2011/12 and 2022/23.
-- **Penalty records** are flagged incomplete (`pens_ok = FALSE`, fewer than
-  0.15 penalties per match) and excluded for: Premier League 2002/03; La Liga
-  2004/05–2005/06; Bundesliga 2004/05–2005/06; Ligue 1 2003/04 and 2005/06;
-  Champions League 2002/03–2006/07 and 2009/10.
+- **Penalty records.** The old rule excluded league-seasons with fewer than
+  0.15 recorded penalties per match. That selected on the outcome and has
+  been removed. Independent event eligibility is recorded per match.
+  `data-audit-coverage.csv` reports how many eligible low-rate matches the
+  old screen would have removed.
 - **Referee names** come from ESPN, plus football-data.co.uk for England. They
   are mostly missing after 2010/11 outside England, so referee fixed effects
   are not used in the main specifications.
@@ -123,3 +133,21 @@ Known gaps (analysis sample: complete seasons, no Champions League qualifiers):
   scattered missing matches in later seasons.
 - **Odds** are available for domestic leagues only. Champions League strength
   controls use the internally computed Elo ratings.
+
+## Audit outputs
+
+`output/tables/data-audit-coverage.csv` reports possession validity,
+event-log eligibility, goal mismatches, score disagreements and domestic
+fixture shortfalls by league-season. `data-audit-score-disagreements.csv`
+lists the conflicting ESPN and football-data scores without adjudicating
+which source is correct. The internal Elo still uses ESPN scores.
+New model manifests report actual estimation rows, unique
+matches and target-club matches separately. The two perspectives on one
+match never count as two independent games.
+
+`output/tables/card-timing-coverage.csv` documents the selected sample for
+the first-30-minute card diagnostic. Both teams' logged yellow-card totals
+must match their box scores, goal totals must reconcile, and the event log
+must contain a regulation-end marker. Extra-time matches are excluded.
+Matching totals cannot establish that every recorded card time is correct.
+

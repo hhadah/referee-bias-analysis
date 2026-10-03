@@ -1,0 +1,20 @@
+check,passed,detail,run_id
+Unique team-match keys,TRUE,No duplicate team perspective enters a model.,20261003-175015
+Two distinct teams per match,TRUE,50164 match pairs,20261003-175015
+Mirrored net outcomes,TRUE,Opponent-minus-own outcomes sum to zero within every observed match.,20261003-175015
+Valid possession pairs,TRUE,"Both shares are observed and valid, or both missing.",20261003-175015
+Completed fixtures only,TRUE,Abandoned and scheduled fixtures excluded.,20261003-175015
+Penalty sample independent of penalty rate,TRUE,"Eligibility uses an end marker and goal reconciliation, not outcome frequency.",20261003-175015
+Goal totals reconcile,TRUE,Extra-time goals count in final-score validation.,20261003-175015
+Regulation score excludes extra time,TRUE,138 reconciled extra-time matches,20261003-175015
+Ordered intervals: barcelona-style-era.csv,TRUE,54 estimated contrasts,20261003-175015
+Ordered intervals: barcelona-style-exposure.csv,TRUE,18 estimated contrasts,20261003-175015
+Ordered intervals: barcelona-style-ladder.csv,TRUE,84 estimated contrasts,20261003-175015
+Ordered intervals: barcelona-style-overlap-estimates.csv,TRUE,36 estimated contrasts,20261003-175015
+Ordered intervals: card-timing-results.csv,TRUE,4 estimated contrasts,20261003-175015
+Ordered intervals: rm-ucl-pooled-precision-estimates.csv,TRUE,200 estimated contrasts,20261003-175015
+Ordered intervals: rm-ucl-pooled-precision-loso.csv,TRUE,380 estimated contrasts,20261003-175015
+Ordered intervals: rm-ucl-pooled-precision-stage-era.csv,TRUE,20 estimated contrasts,20261003-175015
+Common samples across ladders,TRUE,Changing controls does not change estimation rows within an outcome.,20261003-175015
+Detectable-effect calibration,TRUE,Reported MDE attains 80 percent two-sided power under the stated t approximation.,20261003-175015
+Units reconcile,TRUE,Per-ten-match intervals scale both endpoints consistently.,20261003-175015

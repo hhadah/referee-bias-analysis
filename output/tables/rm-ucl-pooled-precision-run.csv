@@ -1,0 +1,2 @@
+run_id,script,script_md5,input_file,input_md5,r_version,fixest_version,data_table_version,main_spec,alpha,power,per_games,n_ucl_rows,n_ucl_matches,n_common_rows_net_yellow,n_rm_matches_net_yellow,n_rm_seasons_net_yellow,n_rm_matches_net_pens,n_rm_seasons_net_pens,n_rm_extra_time,n_models,generated
+20261003-175015,18-champions-league-pooled-precision.R,6c49e2a4c6b741a70851cb47ef9815bc,data/datasets/team-match-panel.csv,4237598ec443fe56d60744856219d211,R version 4.5.2 (2025-10-31),0.12.1,1.18.2.1,style,0.05,0.8,10,5494,2747,4974,218,19,218,19,8,330,2026-10-03 17:50:39

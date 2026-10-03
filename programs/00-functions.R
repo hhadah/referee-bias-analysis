@@ -44,7 +44,7 @@ elite_clubs <- tribble(
 # left the CTA in 2018. La Liga introduced VAR in 2018/19 -- the same season.
 negreira_last_season <- 2017        # 2017/18 is the last season "in" the window
 var_first_season <- c("eng.1" = 2019, "esp.1" = 2018, "ita.1" = 2017,
-                      "ger.1" = 2017, "fra.1" = 2018, "uefa.champions" = 2019)
+                      "ger.1" = 2017, "fra.1" = 2018, "uefa.champions" = 2018)
 
 # Analysis sample ----------------------------------------------------------------
 # Complete seasons only (2026/27 is in progress); Champions League qualifying
@@ -96,7 +96,7 @@ outcome_labels <- c(
 
 # Figure theme ------------------------------------------------------------------
 theme_customs <- function(base_size = 12) {
-  theme_minimal(base_size = base_size, base_family = "Fira Sans") +
+  theme_minimal(base_size = base_size, base_family = "sans") +
     theme(
       plot.title = element_text(face = "bold", size = rel(1.15)),
       plot.subtitle = element_text(colour = "grey30"),
